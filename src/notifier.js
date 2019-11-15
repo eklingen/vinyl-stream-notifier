@@ -35,7 +35,7 @@ function nodeNotifierWrapper (options = {}, callback = () => {}) {
     }
 
     const message = options.message || object.message || object.formatted || object.relativePath || object.fileName || object;
-    const result = {...options, message }})
+    const result = {...options, message }
 
     console.log(`${result.title ? result.title + '\n' : ''}${result.subtitle ? result.subtitle + '\n' : ''}${object.formatted || result.message}`)
     result.message = (object.formatted || result.message).replace(/\\x1b[@-_][0-?]*[ -/]*[@-~]/gi, '') // Strip ANSI codes
