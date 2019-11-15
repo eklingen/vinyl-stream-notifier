@@ -2,18 +2,40 @@
 
 const { join } = require('path')
 
+const DEFAULT_OPTIONS = {
+  title: '',
+  subtitle: '',
+  message: '',
+  icon: '',
+  sound: false,
+  open: false,
+}
+
+const DEFAULT_ERROR_OPTIONS = {
+  title: '😱 Oh no!',
+  icon: 'icon.png',
+  sound: false
+}
+
+const DEFAULT_REGULAR_OPTIONS = {
+  title: '🧐 Pay attention!',
+  icon: 'icon.png',
+  sound: false
+}
+
 function nodeNotifierWrapper (options = {}, callback = () => {}) {
   const notifier = require('node-notifier')
-
-  const DEFAULTS = {
-    error: { title: '😱 Oh no!', icon: join(__dirname, '..', 'images', 'icon.png'), sound: false },
-    regular: { title: '🧐 Pay attention!', icon: join(__dirname, '..', 'images', 'icon.png'), sound: false }
-  }
-
   const reporter = notifier.notify.bind(notifier)
 
   const report = function (object, options = {}) {
-    const result = ({ ...(object instanceof Error) ? DEFAULTS.error : DEFAULTS.regular, ...{ title: options.title || '', subtitle: options.subtitle || '', message: options.message || object.message || object.formatted || object.relativePath || object.fileName || object, open: options.open || '' }})
+    if (object instanceof Error) {
+      options = { ...DEFAULT_ERROR_OPTIONS, ...options}
+    } else {
+      options = { ...DEFAULT_REGULAR_OPTIONS, ...options}
+    }
+
+    const message = options.message || object.message || object.formatted || object.relativePath || object.fileName || object;
+    const result = {...options, message }})
 
     console.log(`${result.title ? result.title + '\n' : ''}${result.subtitle ? result.subtitle + '\n' : ''}${object.formatted || result.message}`)
     result.message = (object.formatted || result.message).replace(/\\x1b[@-_][0-?]*[ -/]*[@-~]/gi, '') // Strip ANSI codes
