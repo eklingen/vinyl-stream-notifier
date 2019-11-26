@@ -10,14 +10,14 @@ const DEFAULT_OPTIONS = {
 }
 
 const DEFAULT_ERROR_OPTIONS = {
-  title: '😱 Oh no!',
-  icon: 'path/to/icon.png',
+  title: 'Error',
+  // icon: 'path/to/icon.png',
   sound: false
 }
 
 const DEFAULT_REGULAR_OPTIONS = {
-  title: '🧐 Pay attention!',
-  icon: 'path/to/icon.png',
+  title: 'Warning',
+  // icon: 'path/to/icon.png',
   sound: false
 }
 
