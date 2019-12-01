@@ -13,9 +13,18 @@ Run node-notifier within your streams. Useful to report errors, for example in c
 
 With `gulp-plumber`:
 
-```
+```javascript
 const notifierWrapper = require('@eklingen/vinyl-stream-notifier')
 return stream.pipe(plumber({ errorHandler: notifierWrapper() }))
+```
+
+With native node pipelines:
+
+```javascript
+const notifierWrapper = require('@eklingen/vinyl-stream-notifier')
+const notify = notifier({ ...options }, () => {})
+
+notify({ message: error })
 ```
 
 ## Options
