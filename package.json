@@ -30,10 +30,10 @@
     "test": "echo '** TODO: Write tests! **'; echo 'Linting...'; eslint index.js --fix;"
   },
   "dependencies": {
-    "node-notifier": "^7.0.1"
+    "node-notifier": "^8.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.2.0",
+    "eslint": "^7.8.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-simple-import-sort": "^5.0.3",
