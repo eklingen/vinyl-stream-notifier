@@ -1,6 +1,7 @@
 
 # Changelog
 
+v5.0.2 - DevEnv changes
 v5.0.1 - Upgrade dependencies
 v5.0.0 - Upgrade dependencies (major notifier version)
 v4.0.0 - Upgrade node to v14 LTS

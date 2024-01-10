@@ -6,22 +6,22 @@ const DEFAULT_OPTIONS = {
   message: '',
   icon: '',
   sound: false,
-  open: false
+  open: false,
 }
 
 const DEFAULT_ERROR_OPTIONS = {
   title: 'Error',
   // icon: 'path/to/icon.png',
-  sound: false
+  sound: false,
 }
 
 const DEFAULT_REGULAR_OPTIONS = {
   title: 'Warning',
   // icon: 'path/to/icon.png',
-  sound: false
+  sound: false,
 }
 
-function nodeNotifierWrapper (options = {}, callback = () => {}) {
+function nodeNotifierWrapper(options = {}, callback = () => {}) {
   const notifier = require('node-notifier')
   const reporter = notifier.notify.bind(notifier)
 
