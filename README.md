@@ -1,6 +1,10 @@
 
 # Small vinyl-stream wrapper -aka Gulp plugin- for node-notifier.
 
+> This project was originally developed independently and has been used in projects at [Fabrique](https//www.fabrique.nl) and [Q42](https://www.q42.nl).
+> It remains publicly available and can be forked or maintained independently if needed.
+> No guarantees are provided for long-term maintenance.
+
 Run node-notifier within your streams. Useful to report errors, for example in combination with ["gulp-plumber"](https://www.npmjs.com/package/gulp-plumber).
 
 > *NOTE:* No tests have been written yet!
